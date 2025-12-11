@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Rooms - Janaki Star Hotel</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Janaki Star Hotel Logo">
+                    <span>Janaki Star Hotel</span>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rooms.html" class="active">Rooms</a></li>
+                    <li><a href="events.html">Events & Venues</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Rooms & Suites</h1>
+            <p>Choose the perfect accommodation for your stay</p>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="rooms-section">
+        <div class="container">
+            <!-- Deluxe Room -->
+            <div class="room-detail" id="deluxe">
+                <div class="room-detail-content reverse">
+                    <div class="room-detail-info">
+                        <h2>Deluxe Room</h2>
+                        <p class="room-price">Rs. 3,500 <span>per night</span></p>
+                        <p class="room-description">Experience enhanced comfort in our Deluxe Rooms, featuring modern amenities and stylish decor. Perfect for travelers seeking a blend of luxury and value.</p>
+                        
+                        <h3>Room Features:</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Queen Size Bed</li>
+                            <li><i class="fas fa-check"></i> Premium Air Conditioning</li>
+                            <li><i class="fas fa-check"></i> Smart TV with Streaming</li>
+                            <li><i class="fas fa-check"></i> High-Speed WiFi</li>
+                            <li><i class="fas fa-check"></i> Premium Bathroom Amenities</li>
+                            <li><i class="fas fa-check"></i> Work Desk & Chair</li>
+                            <li><i class="fas fa-check"></i> Mini Refrigerator</li>
+                            <li><i class="fas fa-check"></i> Coffee/Tea Maker</li>
+                            <li><i class="fas fa-check"></i> Complimentary Breakfast</li>
+                            <li><i class="fas fa-check"></i> Room Service Available</li>
+                        </ul>
+
+                        <div class="room-specs">
+                            <div class="spec">
+                                <i class="fas fa-users"></i>
+                                <span>Max: 2-3 Guests</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>250 sq ft</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-bed"></i>
+                                <span>1 Queen Bed</span>
+                            </div>
+                        </div>
+
+                        <a href="booking.html?room=deluxe" class="btn btn-primary">Book This Room</a>
+                    </div>
+                    <div class="room-detail-gallery">
+                        <div class="main-image">
+                            <img src="images/deluxe1.jpg" alt="Deluxe Room" id="deluxeMainImg">
+                        </div>
+                        <div class="thumbnail-gallery">
+                            <button type="button" class="thumbnail-btn" aria-label="Show Deluxe Room View 1" onclick="changeImage('deluxeMainImg', 'images/deluxe1.jpg')">
+                                <img src="images/deluxe1.jpg" alt="Deluxe Room View 1">
+                            </button>
+                            <button type="button" class="thumbnail-btn" aria-label="Show Deluxe Room View 2" onclick="changeImage('deluxeMainImg', 'images/deluxe2.jpg')">
+                                <img src="images/deluxe2.jpg" alt="Deluxe Room View 2">
+                            </button>
+                            <button type="button" class="thumbnail-btn" aria-label="Show Deluxe Room View 3" onclick="changeImage('deluxeMainImg', 'images/deluxe3.jpg')">
+                                <img src="images/deluxe3.jpg" alt="Deluxe Room View 3">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suite -->
+            <div class="room-detail" id="suite">
+                <div class="room-detail-content">
+                    <div class="room-detail-info">
+                        <h2>Suite Room</h2>
+                        <p class="room-price">Rs. 4,500 <span>per night</span></p>
+                        <p class="room-description">Indulge in our luxurious Suites, offering spacious living areas and premium amenities. Ideal for extended stays or those seeking the ultimate comfort and privacy.</p>
+                        
+                        <h3>Room Features:</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> King Size Bed</li>
+                            <li><i class="fas fa-check"></i> Separate Living Area</li>
+                            <li><i class="fas fa-check"></i> Premium Air Conditioning</li>
+                            <li><i class="fas fa-check"></i> Two Smart TVs</li>
+                            <li><i class="fas fa-check"></i> Ultra-Fast WiFi</li>
+                            <li><i class="fas fa-check"></i> Luxury Bathroom with Bathtub</li>
+                            <li><i class="fas fa-check"></i> Executive Work Desk</li>
+                            <li><i class="fas fa-check"></i> Mini Bar & Refrigerator</li>
+                            <li><i class="fas fa-check"></i> Coffee/Tea Making Facilities</li>
+                            <li><i class="fas fa-check"></i> Complimentary Breakfast & Dinner</li>
+                            <li><i class="fas fa-check"></i> Butler Service</li>
+                            <li><i class="fas fa-check"></i> City View Balcony</li>
+                        </ul>
+
+                        <div class="room-specs">
+                            <div class="spec">
+                                <i class="fas fa-users"></i>
+                                <span>Max: 4 Guests</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>450 sq ft</span>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-bed"></i>
+                                <span>1 King Bed</span>
+                            </div>
+                        </div>
+
+                        <a href="booking.html?room=suite" class="btn btn-primary">Book This Room</a>
+                    </div>
+                    <div class="room-detail-gallery">
+                        <div class="main-image">
+                            <img src="images/suite1.jpg" alt="Suite Room" id="suiteMainImg">
+                        </div>
+                        <div class="thumbnail-gallery">
+                            <button type="button" class="thumbnail-btn" aria-label="Show Suite View 1" onclick="changeImage('suiteMainImg', 'images/suite1.jpg')">
+                                <img src="images/suite1.jpg" alt="Suite View 1">
+                            </button>
+                            <button type="button" class="thumbnail-btn" aria-label="Show Suite View 2" onclick="changeImage('suiteMainImg', 'images/suite2.jpg')">
+                                <img src="images/suite2.jpg" alt="Suite View 2">
+                            </button>
+                            <button type="button" class="thumbnail-btn" aria-label="Show Suite View 3" onclick="changeImage('suiteMainImg', 'images/suite3.jpg')">
+                                <img src="images/suite3.jpg" alt="Suite View 3">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Room Gallery</h2>
+            <p class="section-subtitle">Explore our beautiful rooms and facilities</p>
+            <div class="gallery-grid">
+                <button type="button" class="gallery-item" onclick="openLightbox(0)" aria-label="Open Deluxe lounge photo in lightbox">
+                    <img src="images/deluxe4.jpg" alt="Deluxe Room Lounge">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </button>
+                <button type="button" class="gallery-item" onclick="openLightbox(1)" aria-label="Open conference hall photo in lightbox">
+                    <img src="images/conference1.jpg" alt="Conference Hall Setup">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </button>
+                <button type="button" class="gallery-item" onclick="openLightbox(2)" aria-label="Open dining area photo in lightbox">
+                    <img src="images/dinning1.jpg" alt="Dining Area">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </button>
+                <button type="button" class="gallery-item" onclick="openLightbox(3)" aria-label="Open celebration hall photo in lightbox">
+                    <img src="images/hall1.jpg" alt="Celebration Hall">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </button>
+                <button type="button" class="gallery-item" onclick="openLightbox(4)" aria-label="Open hallway photo in lightbox">
+                    <img src="images/hallway1.jpg" alt="Hotel Hallway">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </button>
+                <button type="button" class="gallery-item" onclick="openLightbox(5)" aria-label="Open hotel exterior photo in lightbox">
+                    <img src="images/hotelimg1.jpg" alt="Hotel Exterior">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Book Your Room?</h2>
+            <p>Reserve your preferred room now and enjoy our hospitality</p>
+            <a href="booking.html" class="btn btn-large">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-hotel"></i> Janaki Star Hotel</h3>
+                    <p>Your home away from home in the sacred city of Janakpur.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/janakistarhotel/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/hotel_janakistar/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@_janaki_star_hotel_" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="events.html">Events & Venues</a></li>
+                        <li><a href="booking.html">Booking</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Janakpur, Nepal</li>
+                        <li><i class="fas fa-phone"></i> +977 985-4080119</li>
+                        <li><i class="fas fa-envelope"></i> janakistarhoteljanakpur@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Janaki Star Hotel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Close gallery">&times;</button>
+        <button class="lightbox-prev" onclick="changeImage(-1)">&#10094;</button>
+        <button class="lightbox-next" onclick="changeImage(1)">&#10095;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/lightbox.js"></script>
+</body>
+</html>
