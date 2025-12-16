@@ -4,6 +4,35 @@
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 
+// Theme Toggle Logic
+const themeToggleBtn = document.getElementById('themeToggle');
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+// Check for saved user preference, if any, on load of the website
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme == "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+    if (themeToggleBtn) themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+} else if (currentTheme == "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+    if (themeToggleBtn) themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+}
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", function () {
+        let theme = "light";
+        if (document.documentElement.getAttribute("data-theme") === "light" || !document.documentElement.getAttribute("data-theme")) {
+            theme = "dark";
+            document.documentElement.setAttribute("data-theme", "dark");
+            this.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+            this.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+        localStorage.setItem("theme", theme);
+    });
+}
+
 if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
@@ -32,7 +61,7 @@ const EVENT_PREVIEW_DELAY = 7000;
 
 function showSlide(n) {
     if (slides.length === 0) return;
-    
+
     if (n >= slides.length) {
         currentSlideIndex = 0;
     }
@@ -191,7 +220,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ========================================
 window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
+
     // Optional: Add a scroll-to-top button if needed
     // You can uncomment and customize this section
     /*
@@ -226,20 +255,20 @@ function setMinDate() {
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
-    
+
     const checkInInput = document.getElementById('checkIn');
     const checkOutInput = document.getElementById('checkOut');
-    
+
     if (checkInInput) {
         checkInInput.min = today.toISOString().split('T')[0];
-        
+
         checkInInput.addEventListener('change', () => {
             if (checkOutInput) {
                 const checkInDate = new Date(checkInInput.value);
                 const nextDay = new Date(checkInDate);
                 nextDay.setDate(nextDay.getDate() + 1);
                 checkOutInput.min = nextDay.toISOString().split('T')[0];
-                
+
                 // Reset checkout if it's before new check-in
                 if (checkOutInput.value && new Date(checkOutInput.value) <= checkInDate) {
                     checkOutInput.value = '';
@@ -247,7 +276,7 @@ function setMinDate() {
             }
         });
     }
-    
+
     if (checkOutInput) {
         checkOutInput.min = tomorrow.toISOString().split('T')[0];
     }
@@ -261,7 +290,7 @@ document.addEventListener('DOMContentLoaded', setMinDate);
 // ========================================
 function animateOnScroll() {
     const elements = document.querySelectorAll('.room-card, .mission-card, .service-item');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -272,7 +301,7 @@ function animateOnScroll() {
     }, {
         threshold: 0.1
     });
-    
+
     elements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';

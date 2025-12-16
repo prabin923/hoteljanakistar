@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Header & Navigation -->
     <header>
@@ -30,6 +32,9 @@
                     <span></span>
                     <span></span>
                 </div>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </nav>
     </header>
@@ -47,8 +52,11 @@
         <div class="container">
             <div class="intro-content">
                 <h2>Host Your Perfect Event</h2>
-                <p>Janaki Star Hotel offers versatile event spaces perfect for weddings, conferences, meetings, engagements, birthday parties, and all your special occasions. Our professional team ensures every detail is handled with care, making your event truly memorable.</p>
-                <p>With modern facilities, customizable setups, and dedicated event coordinators, we provide the ideal setting for events of all sizes in the heart of Janakpur.</p>
+                <p>Janaki Star Hotel offers versatile event spaces perfect for weddings, conferences, meetings,
+                    engagements, birthday parties, and all your special occasions. Our professional team ensures every
+                    detail is handled with care, making your event truly memorable.</p>
+                <p>With modern facilities, customizable setups, and dedicated event coordinators, we provide the ideal
+                    setting for events of all sizes in the heart of Janakpur.</p>
             </div>
         </div>
     </section>
@@ -58,22 +66,25 @@
         <div class="container">
             <h2>Our Event Spaces</h2>
             <p class="section-subtitle">Choose the perfect venue for your special occasion</p>
-            
+
             <div class="venue-slider-wrapper">
                 <button type="button" class="venue-slider-btn prev" onclick="changeVenueSlide(-1)">&#10094;</button>
-                
+
                 <div class="venue-slider">
                     <!-- Grand Banquet Hall Card -->
                     <div class="venue-slide active" data-venue="banquet">
                         <div class="venue-slide-content">
                             <div class="venue-slide-image">
-                                <img src="https://images.unsplash.com/photo-1519167758481-83f29da8fd30?w=800" alt="Grand Banquet Hall">
+                                <img src="https://images.unsplash.com/photo-1519167758481-83f29da8fd30?w=800"
+                                    alt="Grand Banquet Hall">
                             </div>
                             <div class="venue-slide-info">
                                 <h3><i class="fas fa-crown"></i> Grand Banquet Hall</h3>
                                 <p class="venue-price">Rs. 3,500 <span>per night</span></p>
-                                <p class="venue-description">Our Grand Banquet Hall is perfect for weddings and large celebrations. Experience enhanced elegance with state-of-the-art facilities and customizable decor.</p>
-                                
+                                <p class="venue-description">Our Grand Banquet Hall is perfect for weddings and large
+                                    celebrations. Experience enhanced elegance with state-of-the-art facilities and
+                                    customizable decor.</p>
+
                                 <h4>Room Features:</h4>
                                 <div class="venue-features-grid">
                                     <div class="feature-col">
@@ -91,16 +102,17 @@
                                         <p><i class="fas fa-check"></i> Generator Backup</p>
                                     </div>
                                 </div>
-                                
+
                                 <div class="venue-specs">
                                     <div class="spec"><i class="fas fa-users"></i> Max: 300-500 Guests</div>
                                     <div class="spec"><i class="fas fa-ruler-combined"></i> 5,000 sq ft</div>
                                     <div class="spec"><i class="fas fa-crown"></i> Premium Venue</div>
                                 </div>
-                                
+
                                 <div class="venue-actions">
                                     <a href="#event-inquiry" class="btn btn-primary">Book This Venue</a>
-                                    <button type="button" class="btn btn-outline" onclick="showVenueGallery('banquet')">See Gallery</button>
+                                    <button type="button" class="btn btn-outline"
+                                        onclick="showVenueGallery('banquet')">See Gallery</button>
                                 </div>
                             </div>
                         </div>
@@ -110,13 +122,15 @@
                     <div class="venue-slide" data-venue="marriage">
                         <div class="venue-slide-content">
                             <div class="venue-slide-image">
-                                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800" alt="Marriage Hall">
+                                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800"
+                                    alt="Marriage Hall">
                             </div>
                             <div class="venue-slide-info">
                                 <h3><i class="fas fa-heart"></i> Marriage Hall</h3>
                                 <p class="venue-price">Rs. 2,500 <span>per night</span></p>
-                                <p class="venue-description">Intimate and elegant wedding venue perfect for traditional ceremonies. Combining classic charm with modern amenities for your special day.</p>
-                                
+                                <p class="venue-description">Intimate and elegant wedding venue perfect for traditional
+                                    ceremonies. Combining classic charm with modern amenities for your special day.</p>
+
                                 <h4>Room Features:</h4>
                                 <div class="venue-features-grid">
                                     <div class="feature-col">
@@ -134,16 +148,17 @@
                                         <p><i class="fas fa-check"></i> Valet Parking Available</p>
                                     </div>
                                 </div>
-                                
+
                                 <div class="venue-specs">
                                     <div class="spec"><i class="fas fa-users"></i> Max: 150-250 Guests</div>
                                     <div class="spec"><i class="fas fa-ruler-combined"></i> 3,000 sq ft</div>
                                     <div class="spec"><i class="fas fa-heart"></i> Wedding Venue</div>
                                 </div>
-                                
+
                                 <div class="venue-actions">
                                     <a href="#event-inquiry" class="btn btn-primary">Book This Venue</a>
-                                    <button type="button" class="btn btn-outline" onclick="showVenueGallery('marriage')">See Gallery</button>
+                                    <button type="button" class="btn btn-outline"
+                                        onclick="showVenueGallery('marriage')">See Gallery</button>
                                 </div>
                             </div>
                         </div>
@@ -153,13 +168,16 @@
                     <div class="venue-slide" data-venue="conference">
                         <div class="venue-slide-content">
                             <div class="venue-slide-image">
-                                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800" alt="Conference Hall">
+                                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800"
+                                    alt="Conference Hall">
                             </div>
                             <div class="venue-slide-info">
                                 <h3><i class="fas fa-briefcase"></i> Conference Hall</h3>
                                 <p class="venue-price">Rs. 1,500 <span>per day</span></p>
-                                <p class="venue-description">Professional conference space equipped with cutting-edge technology. Ideal for corporate meetings, seminars, and business events in Janakpur.</p>
-                                
+                                <p class="venue-description">Professional conference space equipped with cutting-edge
+                                    technology. Ideal for corporate meetings, seminars, and business events in Janakpur.
+                                </p>
+
                                 <h4>Room Features:</h4>
                                 <div class="venue-features-grid">
                                     <div class="feature-col">
@@ -179,16 +197,17 @@
                                         <p><i class="fas fa-check"></i> Flexible Seating Setup</p>
                                     </div>
                                 </div>
-                                
+
                                 <div class="venue-specs">
                                     <div class="spec"><i class="fas fa-users"></i> Max: 50-100 Attendees</div>
                                     <div class="spec"><i class="fas fa-ruler-combined"></i> 1,500 sq ft</div>
                                     <div class="spec"><i class="fas fa-briefcase"></i> Business Ready</div>
                                 </div>
-                                
+
                                 <div class="venue-actions">
                                     <a href="#event-inquiry" class="btn btn-primary">Book This Venue</a>
-                                    <button type="button" class="btn btn-outline" onclick="showVenueGallery('conference')">See Gallery</button>
+                                    <button type="button" class="btn btn-outline"
+                                        onclick="showVenueGallery('conference')">See Gallery</button>
                                 </div>
                             </div>
                         </div>
@@ -198,13 +217,15 @@
                     <div class="venue-slide" data-venue="meeting">
                         <div class="venue-slide-content">
                             <div class="venue-slide-image">
-                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800" alt="Meeting Room">
+                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800"
+                                    alt="Meeting Room">
                             </div>
                             <div class="venue-slide-info">
                                 <h3><i class="fas fa-handshake"></i> Private Meeting Room</h3>
                                 <p class="venue-price">Rs. 500 <span>per hour</span></p>
-                                <p class="venue-description">Exclusive space for small gatherings and business meetings. Intimate and professional environment with essential business amenities.</p>
-                                
+                                <p class="venue-description">Exclusive space for small gatherings and business meetings.
+                                    Intimate and professional environment with essential business amenities.</p>
+
                                 <h4>Room Features:</h4>
                                 <div class="venue-features-grid">
                                     <div class="feature-col">
@@ -222,16 +243,17 @@
                                         <p><i class="fas fa-check"></i> Private Entrance</p>
                                     </div>
                                 </div>
-                                
+
                                 <div class="venue-specs">
                                     <div class="spec"><i class="fas fa-users"></i> Max: 10-20 People</div>
                                     <div class="spec"><i class="fas fa-ruler-combined"></i> 500 sq ft</div>
                                     <div class="spec"><i class="fas fa-door-closed"></i> Soundproof</div>
                                 </div>
-                                
+
                                 <div class="venue-actions">
                                     <a href="#event-inquiry" class="btn btn-primary">Book This Venue</a>
-                                    <button type="button" class="btn btn-outline" onclick="showVenueGallery('meeting')">See Gallery</button>
+                                    <button type="button" class="btn btn-outline"
+                                        onclick="showVenueGallery('meeting')">See Gallery</button>
                                 </div>
                             </div>
                         </div>
@@ -241,13 +263,16 @@
                     <div class="venue-slide" data-venue="party">
                         <div class="venue-slide-content">
                             <div class="venue-slide-image">
-                                <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800" alt="Party Hall">
+                                <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800"
+                                    alt="Party Hall">
                             </div>
                             <div class="venue-slide-info">
                                 <h3><i class="fas fa-birthday-cake"></i> Party Hall</h3>
                                 <p class="venue-price">Rs. 2,000 <span>per event</span></p>
-                                <p class="venue-description">Fun and festive celebration space perfect for birthday parties and special occasions. Versatile venue with flexible arrangements and vibrant ambiance.</p>
-                                
+                                <p class="venue-description">Fun and festive celebration space perfect for birthday
+                                    parties and special occasions. Versatile venue with flexible arrangements and
+                                    vibrant ambiance.</p>
+
                                 <h4>Room Features:</h4>
                                 <div class="venue-features-grid">
                                     <div class="feature-col">
@@ -265,16 +290,17 @@
                                         <p><i class="fas fa-check"></i> Party Planning Assistance</p>
                                     </div>
                                 </div>
-                                
+
                                 <div class="venue-specs">
                                     <div class="spec"><i class="fas fa-users"></i> Max: 50-100 Guests</div>
                                     <div class="spec"><i class="fas fa-ruler-combined"></i> 1,200 sq ft</div>
                                     <div class="spec"><i class="fas fa-birthday-cake"></i> Party Ready</div>
                                 </div>
-                                
+
                                 <div class="venue-actions">
                                     <a href="#event-inquiry" class="btn btn-primary">Book This Venue</a>
-                                    <button type="button" class="btn btn-outline" onclick="showVenueGallery('party')">See Gallery</button>
+                                    <button type="button" class="btn btn-outline"
+                                        onclick="showVenueGallery('party')">See Gallery</button>
                                 </div>
                             </div>
                         </div>
@@ -283,7 +309,7 @@
 
                 <button type="button" class="venue-slider-btn next" onclick="changeVenueSlide(1)">&#10095;</button>
             </div>
-            
+
             <div class="venue-slider-dots">
                 <span class="venue-dot active" onclick="currentVenueSlide(0)"></span>
                 <span class="venue-dot" onclick="currentVenueSlide(1)"></span>
@@ -305,7 +331,8 @@
     <!-- Venue Gallery Modal -->
     <div id="venueGalleryModal" class="modal venue-gallery-modal">
         <div class="modal-content gallery-modal-content">
-            <button type="button" class="close" onclick="closeVenueGallery()" aria-label="Close gallery">&times;</button>
+            <button type="button" class="close" onclick="closeVenueGallery()"
+                aria-label="Close gallery">&times;</button>
             <div class="gallery-modal-header">
                 <h2 id="venueGalleryTitle">Venue Gallery</h2>
                 <p id="venueGallerySubtitle">Experience the ambiance before you visit</p>
@@ -317,11 +344,14 @@
     <!-- Gallery Lightbox Modal -->
     <div id="galleryLightbox" class="modal gallery-lightbox-modal" aria-hidden="true">
         <div class="modal-content gallery-lightbox-content">
-            <button type="button" class="close lightbox-close" data-lightbox-close aria-label="Close image">&times;</button>
+            <button type="button" class="close lightbox-close" data-lightbox-close
+                aria-label="Close image">&times;</button>
             <img id="galleryLightboxImage" src="" alt="Expanded venue view">
             <p id="galleryLightboxCaption" class="gallery-lightbox-caption"></p>
-            <button type="button" class="lightbox-nav prev" data-lightbox-nav="prev" aria-label="View previous photo">&#10094;</button>
-            <button type="button" class="lightbox-nav next" data-lightbox-nav="next" aria-label="View next photo">&#10095;</button>
+            <button type="button" class="lightbox-nav prev" data-lightbox-nav="prev"
+                aria-label="View previous photo">&#10094;</button>
+            <button type="button" class="lightbox-nav next" data-lightbox-nav="next"
+                aria-label="View next photo">&#10095;</button>
         </div>
     </div>
 
@@ -330,22 +360,25 @@
         <div class="container">
             <h2>Catering & Services</h2>
             <p class="section-subtitle">Complete event solutions under one roof</p>
-            
+
             <div class="services-grid">
                 <div class="service-card">
                     <i class="fas fa-utensils"></i>
                     <h3>Custom Catering</h3>
-                    <p>Traditional Nepali cuisine, Indian delicacies, Continental dishes, and customized menus to suit your preferences and dietary requirements.</p>
+                    <p>Traditional Nepali cuisine, Indian delicacies, Continental dishes, and customized menus to suit
+                        your preferences and dietary requirements.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-glass-cheers"></i>
                     <h3>Beverage Services</h3>
-                    <p>Comprehensive beverage packages including welcome drinks, soft drinks, juices, tea/coffee stations, and bar services.</p>
+                    <p>Comprehensive beverage packages including welcome drinks, soft drinks, juices, tea/coffee
+                        stations, and bar services.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-paint-brush"></i>
                     <h3>Decoration Services</h3>
-                    <p>Professional decoration team to transform venues according to your theme, from traditional to contemporary styles.</p>
+                    <p>Professional decoration team to transform venues according to your theme, from traditional to
+                        contemporary styles.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-camera"></i>
@@ -355,12 +388,14 @@
                 <div class="service-card">
                     <i class="fas fa-music"></i>
                     <h3>Entertainment</h3>
-                    <p>DJ services, live music arrangements, sound systems, and entertainment coordination for your event.</p>
+                    <p>DJ services, live music arrangements, sound systems, and entertainment coordination for your
+                        event.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-user-tie"></i>
                     <h3>Event Coordination</h3>
-                    <p>Dedicated event managers to handle all aspects of your event, ensuring smooth execution from start to finish.</p>
+                    <p>Dedicated event managers to handle all aspects of your event, ensuring smooth execution from
+                        start to finish.</p>
                 </div>
             </div>
         </div>
@@ -371,7 +406,7 @@
         <div class="container">
             <h2>Request Event Booking</h2>
             <p class="section-subtitle">Fill out the form below and our event team will contact you within 24 hours</p>
-            
+
             <div class="inquiry-container">
                 <form id="eventInquiryForm" class="event-inquiry-form">
                     <div class="form-row">
@@ -379,7 +414,8 @@
                             <label for="eventName">
                                 <i class="fas fa-user"></i> Your Name *
                             </label>
-                            <input type="text" id="eventName" name="eventName" required placeholder="Enter your full name">
+                            <input type="text" id="eventName" name="eventName" required
+                                placeholder="Enter your full name">
                         </div>
                         <div class="form-group">
                             <label for="eventEmail">
@@ -442,7 +478,8 @@
                             <label for="guestCount">
                                 <i class="fas fa-users"></i> Expected Guests *
                             </label>
-                            <input type="number" id="guestCount" name="guestCount" required placeholder="Number of guests" min="10">
+                            <input type="number" id="guestCount" name="guestCount" required
+                                placeholder="Number of guests" min="10">
                         </div>
                         <div class="form-group">
                             <label for="eventDuration">
@@ -484,7 +521,8 @@
                         <label for="eventDetails">
                             <i class="fas fa-comment-dots"></i> Additional Details
                         </label>
-                        <textarea id="eventDetails" name="eventDetails" rows="5" placeholder="Please share any specific requirements, preferences, or questions about your event..."></textarea>
+                        <textarea id="eventDetails" name="eventDetails" rows="5"
+                            placeholder="Please share any specific requirements, preferences, or questions about your event..."></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-large">
@@ -535,9 +573,12 @@
                     <h3><i class="fas fa-hotel"></i> Janaki Star Hotel</h3>
                     <p>Your home away from home in the sacred city of Janakpur.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/janakistarhotel/" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/hotel_janakistar/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@_janaki_star_hotel_" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/janakistarhotel/" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/hotel_janakistar/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@_janaki_star_hotel_" target="_blank"><i
+                                class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -590,4 +631,5 @@
     <script src="js/script.js"></script>
     <script src="js/events.js"></script>
 </body>
+
 </html>
