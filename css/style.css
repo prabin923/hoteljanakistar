@@ -29,6 +29,7 @@
     --text-light: #dddddd;
     --bg-light: #1a1a1a;
     --white: #2a2a2a;
+    --static-white: #ffffff;
     --cream: #121212;
     --card-bg: #2d2d2d;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -257,7 +258,7 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: var(--static-white);
+    color: var(--static-white) !important;
     z-index: 2;
     width: 90%;
 }
@@ -396,7 +397,7 @@ header {
 
 .btn-primary {
     background: var(--primary-color);
-    color: var(--static-white);
+    color: var(--static-white) !important;
     box-shadow: 0 4px 15px rgba(197, 32, 36, 0.3);
 }
 
