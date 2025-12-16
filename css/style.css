@@ -15,6 +15,7 @@
     --text-light: #666666;
     --bg-light: #F5EEDC;
     --white: #ffffff;
+    --static-white: #ffffff;
     --cream: #FDF8E1;
     --card-bg: #ffffff;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -256,7 +257,7 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: var(--white);
+    color: var(--static-white);
     z-index: 2;
     width: 90%;
 }
@@ -314,7 +315,7 @@ header {
     top: 50%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.3);
-    color: var(--white);
+    color: var(--static-white);
     border: none;
     padding: 1rem;
     cursor: pointer;
@@ -394,8 +395,8 @@ header {
 }
 
 .btn-primary {
-    background: #C52024;
-    color: var(--white);
+    background: var(--primary-color);
+    color: var(--static-white);
     box-shadow: 0 4px 15px rgba(197, 32, 36, 0.3);
 }
 
@@ -406,7 +407,7 @@ header {
 }
 
 .btn-secondary {
-    background: #FBCB0A;
+    background: var(--secondary-color);
     color: var(--text-dark);
     box-shadow: 0 4px 15px rgba(251, 203, 10, 0.3);
 }
@@ -419,13 +420,13 @@ header {
 
 .btn-outline {
     background: transparent;
-    color: #C52024;
-    border: 2px solid #C52024;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-outline:hover {
-    background: #C52024;
-    color: var(--white);
+    background: var(--primary-color);
+    color: var(--static-white);
     transform: translateY(-3px);
 }
 
@@ -657,7 +658,7 @@ section h2::after {
 }
 
 .room-card.featured {
-    border: 2px solid #C52024;
+    border: 2px solid var(--primary-color);
     animation: glowing 2s ease-in-out infinite;
 }
 
@@ -677,7 +678,7 @@ section h2::after {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #FBCB0A;
+    background: var(--secondary-color);
     color: var(--text-dark);
     padding: 0.3rem 1rem;
     border-radius: 20px;
@@ -775,8 +776,8 @@ section h2::after {
    CTA Section
    ======================================== */
 .cta-section {
-    background: linear-gradient(135deg, #C52024, #FBCB0A);
-    color: var(--white);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--static-white);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -804,7 +805,7 @@ section h2::after {
 }
 
 .cta-section h2 {
-    color: var(--white);
+    color: var(--static-white);
     position: static;
     transform: none;
     left: auto;
@@ -828,7 +829,7 @@ section h2::after {
    ======================================== */
 footer {
     background: #2a2a2a;
-    color: var(--white);
+    color: var(--static-white);
     padding: 3rem 0 1rem;
     position: relative;
 }
@@ -840,7 +841,7 @@ footer::before {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #C52024, #FBCB0A, #C52024);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
     animation: gradientMove 3s linear infinite;
 }
 
@@ -866,7 +867,7 @@ footer::before {
 }
 
 .footer-section h3 {
-    color: #FBCB0A;
+    color: var(--secondary-color);
     margin-bottom: 1rem;
     animation: fadeInLeft 0.8s ease-out;
 }
@@ -884,7 +885,7 @@ footer::before {
 }
 
 .footer-section h4 {
-    color: var(--white);
+    color: var(--static-white);
     margin-bottom: 1rem;
 }
 
@@ -943,7 +944,7 @@ footer::before {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: linear-gradient(45deg, #C52024, #FBCB0A);
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     opacity: 0;
     transition: opacity 0.4s ease;
 }
@@ -968,8 +969,8 @@ footer::before {
    Page Header
    ======================================== */
 .page-header {
-    background: linear-gradient(135deg, #C52024, #FBCB0A);
-    color: var(--white);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--static-white);
     text-align: center;
     padding: 4rem 0;
     position: relative;
@@ -2164,7 +2165,7 @@ footer::before {
 
 .gallery-overlay i {
     font-size: 3rem;
-    color: var(--white);
+    color: var(--static-white);
     transform: scale(0);
     transition: transform 0.4s ease;
 }
@@ -2255,7 +2256,7 @@ footer::before {
     position: absolute;
     top: 20px;
     right: 40px;
-    color: var(--white);
+    color: var(--static-white);
     font-size: 50px;
     font-weight: bold;
     cursor: pointer;
@@ -2283,7 +2284,7 @@ footer::before {
     top: 50%;
     transform: translateY(-50%);
     background: rgba(197, 32, 36, 0.8);
-    color: var(--white);
+    color: var(--static-white);
     border: none;
     padding: 1.5rem 1rem;
     cursor: pointer;
@@ -2506,7 +2507,7 @@ footer::before {
 
 .venue-actions .btn-outline:hover {
     background: var(--primary-color);
-    color: var(--white);
+    color: var(--static-white);
 }
 
 /* Slider Navigation Buttons */
@@ -2640,7 +2641,7 @@ footer::before {
 }
 
 .gallery-lightbox-caption {
-    color: var(--white);
+    color: var(--static-white);
     font-weight: 500;
     letter-spacing: 0.5px;
 }
