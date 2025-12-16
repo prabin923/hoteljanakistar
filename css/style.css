@@ -16,6 +16,7 @@
     --bg-light: #F5EEDC;
     --white: #ffffff;
     --static-white: #ffffff;
+    --static-dark: #333333;
     --cream: #FDF8E1;
     --card-bg: #ffffff;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -30,6 +31,7 @@
     --bg-light: #1a1a1a;
     --white: #2a2a2a;
     --static-white: #ffffff;
+    --static-dark: #333333;
     --cream: #121212;
     --card-bg: #2d2d2d;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -2485,7 +2487,7 @@ footer::before {
     padding: 0.6rem 1.2rem;
     border-radius: 25px;
     font-size: 0.9rem;
-    color: var(--text-dark);
+    color: var(--static-dark);
 }
 
 .venue-specs .spec i {
