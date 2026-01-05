@@ -1,24 +1,22 @@
 {
-  "name": "package.json",
+  "name": "janakistar-hotel",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "homepage": "https://github.com/prabin923/hoteljanakistar#readme",
-  "bugs": {
-    "url": "https://github.com/prabin923/hoteljanakistar/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prabin923/hoteljanakistar.git"
-  },
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.1.1",
+    "@emailjs/browser": "^4.4.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.6"
   }
 }
