@@ -1,13 +1,12 @@
 import { useState } from 'react'
-import emailjs from '@emailjs/browser'
 
 function ContactPage() {
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
+        user_name: '',
+        user_email: '',
+        user_phone: '',
+        user_subject: '',
+        user_message: ''
     })
     const [showModal, setShowModal] = useState(false)
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -22,27 +21,24 @@ function ContactPage() {
         setIsSubmitting(true)
 
         try {
-            // EmailJS integration
-            // Replace these with your actual EmailJS credentials
-            await emailjs.send(
-                'YOUR_SERVICE_ID',     // Replace with your EmailJS service ID
-                'YOUR_TEMPLATE_ID',    // Replace with your EmailJS template ID
-                {
-                    from_name: formData.name,
-                    from_email: formData.email,
-                    phone: formData.phone,
-                    subject: formData.subject,
-                    message: formData.message,
-                    to_email: 'janakistarhoteljanakpur@gmail.com'
+            const response = await fetch('http://localhost:3001/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
                 },
-                'YOUR_PUBLIC_KEY'      // Replace with your EmailJS public key
-            )
+                body: JSON.stringify(formData),
+            });
 
-            setShowModal(true)
-            setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+            if (response.ok) {
+                setShowModal(true)
+                setFormData({ user_name: '', user_email: '', user_phone: '', user_subject: '', user_message: '' })
+            } else {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Failed to send message');
+            }
         } catch (error) {
             console.error('Email error:', error)
-            alert('Failed to send message. Please try again or contact us directly.')
+            alert('Contact Error: ' + error.message)
         } finally {
             setIsSubmitting(false)
         }
@@ -98,10 +94,10 @@ function ContactPage() {
                                     <input
                                         type="text"
                                         id="name"
-                                        name="name"
+                                        name="user_name"
                                         required
                                         placeholder="Enter your full name"
-                                        value={formData.name}
+                                        value={formData.user_name}
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -113,10 +109,10 @@ function ContactPage() {
                                     <input
                                         type="email"
                                         id="email"
-                                        name="email"
+                                        name="user_email"
                                         required
                                         placeholder="your@email.com"
-                                        value={formData.email}
+                                        value={formData.user_email}
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -128,9 +124,9 @@ function ContactPage() {
                                     <input
                                         type="tel"
                                         id="phone"
-                                        name="phone"
+                                        name="user_phone"
                                         placeholder="+977-123-456789"
-                                        value={formData.phone}
+                                        value={formData.user_phone}
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -141,9 +137,9 @@ function ContactPage() {
                                     </label>
                                     <select
                                         id="subject"
-                                        name="subject"
+                                        name="user_subject"
                                         required
-                                        value={formData.subject}
+                                        value={formData.user_subject}
                                         onChange={handleChange}
                                     >
                                         <option value="">Select a subject</option>
@@ -161,11 +157,11 @@ function ContactPage() {
                                     </label>
                                     <textarea
                                         id="message"
-                                        name="message"
+                                        name="user_message"
                                         rows="6"
                                         required
                                         placeholder="Write your message here..."
-                                        value={formData.message}
+                                        value={formData.user_message}
                                         onChange={handleChange}
                                     ></textarea>
                                 </div>

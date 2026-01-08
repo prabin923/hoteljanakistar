@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import emailjs from '@emailjs/nodejs';
 
 dotenv.config();
 
@@ -10,20 +11,72 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Basic health check
-app.get('/', (req, res) => {
-    res.send('Janakistar Hotel API is running');
+// Configure EmailJS
+// Configure EmailJS
+const EMAILJS_SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY;
+const EMAILJS_PRIVATE_KEY = process.env.EMAILJS_PRIVATE_KEY;
+
+console.log('EmailJS Backend Config Loaded:', {
+    service: !!EMAILJS_SERVICE_ID,
+    template: !!EMAILJS_TEMPLATE_ID,
+    public: !!EMAILJS_PUBLIC_KEY,
+    private: !!EMAILJS_PRIVATE_KEY
 });
 
-// Proxy or direct API for EmailJS if needed, 
-// though EmailJS is typically used client-side.
-// We'll keep this as a shell for any future backend logic.
-app.post('/api/contact', (req, res) => {
-    const { name, email, subject, message } = req.body;
-    console.log('Received contact request:', { name, email, subject });
+// Basic health check
+app.get('/', (req, res) => {
+    res.send('Janakistar Hotel API is running with EmailJS');
+});
 
-    // Here you can add logic to log to a database or perform other backend tasks
-    res.status(200).json({ status: 'success', message: 'Message received on server' });
+// Generic email sender helper
+const sendEmail = async (templateId, templateParams) => {
+    return emailjs.send(
+        EMAILJS_SERVICE_ID,
+        templateId,
+        templateParams,
+        {
+            publicKey: EMAILJS_PUBLIC_KEY,
+            privateKey: EMAILJS_PRIVATE_KEY,
+        }
+    );
+};
+
+// Booking endpoint
+app.post('/api/booking', async (req, res) => {
+    console.log('Received booking request:', req.body);
+    try {
+        await sendEmail(EMAILJS_TEMPLATE_ID, req.body);
+        res.status(200).json({ status: 'success', message: 'Booking inquiry sent via EmailJS' });
+    } catch (error) {
+        console.error('EmailJS Booking Error:', error);
+        res.status(500).json({ status: 'error', message: 'Failed to send booking inquiry', details: error.message });
+    }
+});
+
+// Contact endpoint
+app.post('/api/contact', async (req, res) => {
+    console.log('Received contact request:', req.body);
+    try {
+        await sendEmail(EMAILJS_TEMPLATE_ID, req.body);
+        res.status(200).json({ status: 'success', message: 'Contact message sent via EmailJS' });
+    } catch (error) {
+        console.error('EmailJS Contact Error:', error);
+        res.status(500).json({ status: 'error', message: 'Failed to send message', details: error.message });
+    }
+});
+
+// Event inquiry endpoint
+app.post('/api/event', async (req, res) => {
+    console.log('Received event inquiry:', req.body);
+    try {
+        await sendEmail(EMAILJS_TEMPLATE_ID, req.body);
+        res.status(200).json({ status: 'success', message: 'Event inquiry sent via EmailJS' });
+    } catch (error) {
+        console.error('EmailJS Event Error:', error);
+        res.status(500).json({ status: 'error', message: 'Failed to send event inquiry', details: error.message });
+    }
 });
 
 app.listen(PORT, () => {

@@ -10,20 +10,53 @@ function BookingPage() {
         room: searchParams.get('room') || 'deluxe',
         checkIn: '',
         checkOut: '',
-        guests: '1',
+        adults: '1',
+        children: '0',
         requests: ''
     })
     const [showModal, setShowModal] = useState(false)
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        // In production, this would send to backend
-        console.log('Booking submitted:', formData)
-        setShowModal(true)
+        setIsSubmitting(true)
+
+        try {
+            const response = await fetch('http://localhost:3001/api/booking', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setShowModal(true)
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    room: 'deluxe',
+                    checkIn: '',
+                    checkOut: '',
+                    adults: '1',
+                    children: '0',
+                    requests: ''
+                })
+            } else {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Failed to submit booking');
+            }
+        } catch (error) {
+            console.error('Booking error:', error)
+            alert('Booking Error: ' + error.message)
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     // Set minimum dates
@@ -143,20 +176,36 @@ function BookingPage() {
 
                                 <div className="form-row">
                                     <div className="form-group">
-                                        <label htmlFor="guests">
-                                            <i className="fas fa-users"></i> Number of Guests *
+                                        <label htmlFor="adults">
+                                            <i className="fas fa-users"></i> Number of Adults *
                                         </label>
                                         <select
-                                            id="guests"
-                                            name="guests"
+                                            id="adults"
+                                            name="adults"
                                             required
-                                            value={formData.guests}
+                                            value={formData.adults}
                                             onChange={handleChange}
                                         >
-                                            <option value="1">1 Guest</option>
-                                            <option value="2">2 Guests</option>
-                                            <option value="3">3 Guests</option>
-                                            <option value="4">4 Guests</option>
+                                            <option value="1">1 Adult</option>
+                                            <option value="2">2 Adults</option>
+                                            <option value="3">3 Adults</option>
+                                            <option value="4">4 Adults</option>
+                                        </select>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="children">
+                                            <i className="fas fa-child"></i> Number of Children
+                                        </label>
+                                        <select
+                                            id="children"
+                                            name="children"
+                                            value={formData.children}
+                                            onChange={handleChange}
+                                        >
+                                            <option value="0">0 Children</option>
+                                            <option value="1">1 Child</option>
+                                            <option value="2">2 Children</option>
+                                            <option value="3">3 Children</option>
                                         </select>
                                     </div>
                                 </div>
@@ -175,8 +224,8 @@ function BookingPage() {
                                     ></textarea>
                                 </div>
 
-                                <button type="submit" className="btn btn-primary btn-large">
-                                    <i className="fas fa-check"></i> Confirm Booking
+                                <button type="submit" className="btn btn-primary btn-large" disabled={isSubmitting}>
+                                    <i className="fas fa-check"></i> {isSubmitting ? 'Submitting...' : 'Confirm Booking'}
                                 </button>
                             </form>
                         </div>

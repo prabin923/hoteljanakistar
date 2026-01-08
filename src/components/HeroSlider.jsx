@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function HeroSlider() {
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -55,7 +56,7 @@ function HeroSlider() {
                         <div className="slide-content">
                             <h1>{slide.title}</h1>
                             <p>{slide.subtitle}</p>
-                            <a href={slide.buttonLink} className="btn btn-primary">{slide.buttonText}</a>
+                            <Link to={slide.buttonLink} className="btn btn-primary">{slide.buttonText}</Link>
                         </div>
                     </div>
                 ))}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function EventsPreview() {
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -68,7 +69,7 @@ function EventsPreview() {
                                         <h3><i className={event.icon}></i> {event.title}</h3>
                                         <p className="capacity"><i className="fas fa-users"></i> {event.capacity}</p>
                                         <p>{event.description}</p>
-                                        <a href={event.link} className="btn btn-outline">View Details</a>
+                                        <Link to={event.link} className="btn btn-outline">View Details</Link>
                                     </div>
                                 </div>
                             </article>
@@ -87,7 +88,7 @@ function EventsPreview() {
                     ))}
                 </div>
                 <div className="cta-center">
-                    <a href="/events" className="btn btn-primary">Explore All Venues</a>
+                    <Link to="/events" className="btn btn-primary">Explore All Venues</Link>
                 </div>
             </div>
         </section>

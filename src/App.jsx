@@ -8,6 +8,8 @@ import EventsPage from './pages/EventsPage'
 import BookingPage from './pages/BookingPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import TermsPage from './pages/TermsPage'
+import PrivacyPage from './pages/PrivacyPage'
 
 function App() {
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
@@ -32,6 +34,8 @@ function App() {
                     <Route path="/booking" element={<BookingPage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/terms" element={<TermsPage />} />
+                    <Route path="/privacy" element={<PrivacyPage />} />
                 </Routes>
             </main>
             <Footer />
