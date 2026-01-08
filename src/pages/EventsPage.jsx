@@ -139,7 +139,7 @@ function EventsPage() {
         const data = Object.fromEntries(formData.entries())
 
         try {
-            const response = await fetch('http://localhost:3001/api/event', {
+            const response = await fetch('/api/event', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

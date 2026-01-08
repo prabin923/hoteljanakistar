@@ -21,7 +21,7 @@ function ContactPage() {
         setIsSubmitting(true)
 
         try {
-            const response = await fetch('http://localhost:3001/api/contact', {
+            const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
